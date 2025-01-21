@@ -9,7 +9,7 @@
 
 void *ServerEcho(void *args)
 {
-    int clientFileDescriptor=(int)args;
+    int clientFileDescriptor = *(int*)args;
     char str[20];
 
     read(clientFileDescriptor,str,20);
@@ -39,9 +39,11 @@ int main(int argc, char* argv[])
         {
             for(i=0;i<20;i++)      //can support 20 clients at a time
             {
-                clientFileDescriptor=accept(serverFileDescriptor,NULL,NULL);
+                clientFileDescriptor = accept(serverFileDescriptor,NULL,NULL);
+                int * args = malloc(sizeof(int));
+                *args = clientFileDescriptor;
                 printf("Connected to client %d\n",clientFileDescriptor);
-                pthread_create(&t[i],NULL,ServerEcho,(void *)(long)clientFileDescriptor);
+                pthread_create(&t[i],NULL,ServerEcho,(void *)args);
             }
         }
         close(serverFileDescriptor);
