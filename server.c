@@ -123,5 +123,14 @@ int main(int argc, char* argv[]) {
         free(theArray[i]);
     }
     free(theArray);
+    for (i = 0; i < NUM_STR; i++) {
+        pthread_mutex_destroy(mutexes[i]);
+        free(mutexes[i]);
+    }
+    free(mutexes);
+    free(times);
+    pthread_mutex_destroy(times_mutex);
+    free(times_mutex);
+    
     return 0;
 }
