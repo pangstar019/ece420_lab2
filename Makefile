@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall -Werror -g 
 
 all: main client attacker
 
@@ -10,7 +10,7 @@ client: client.o
 	$(CC) $(CFLAGS) -o client client.o
 
 attacker: attacker.o
-	$(CC) $(CFLAGS) -o attacker attacker.o
+	$(CC) $(CFLAGS) -o attacker attacker.o -lm
 
 server.o: server.c
 	$(CC) $(CFLAGS) -c server.c
