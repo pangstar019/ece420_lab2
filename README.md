@@ -1,4 +1,4 @@
-![huh](https://imgur.com/a/rdJsd6k)
+![huh](https://i.imgur.com/xZJkvub.png)
 
 Read me for ECE 420 Lab2 Script Kit
 Jan. 2019
