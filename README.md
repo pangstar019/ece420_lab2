@@ -1,3 +1,5 @@
+![huh]([URL or file path](https://drive.google.com/file/d/1FMQ7AmOhFkJLtEgh1ZRzLATSWy_abk_Q/view?usp=sharing))
+
 Read me for ECE 420 Lab2 Script Kit
 Jan. 2019
 
